@@ -13,10 +13,12 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@400;700&family=PT+Sans:wght@400;700&family=Staatliches&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/Logo_Fun.png">
     <style>
         body {
             font-size: 16px; /* Tamaño de fuente inicial */
             transition: font-size 0.3s; /* Transición suave para cambios de tamaño de fuente */
+            transition: filter 0.5s;
         }
 
         /* Estilo del menú desplegable */
@@ -26,36 +28,33 @@
             right: 10px;
         }
 
-        .boton-donar {
+        .ModoAccesible {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #27aa2b;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center; /* Alinea los elementos verticalmente */
-            
+            left: 10px;
+            top: 10px;
         }
 
-        .boton-donar svg {
-            margin-right: 10px; /* Espaciado entre el icono y el texto */
-        }
 
-        .boton-donar:hover {
-            background-color: #45a049;
-        }
+        .botonBonito {
+        padding: 10px 10px;
+        font-size: 16px;
+        background-color: #4CAF50; /* Color verde, puedes cambiarlo a tu preferencia */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .botonBonito:hover {
+        background-color: #45a049; /* Cambia el color al pasar el ratón por encima */
+    }
     </style>
 </head>
 
 <body>
     
     <header class="header">
-        <div>
+
             <div class="contenedor" >
             <div class="barra">
                 <a class="logo" href="index.html">
@@ -72,8 +71,7 @@
             <h2 class="no-margin">Apoyando y mejorando la vida de las personas con discapacidades</h2>
             <p class="no-margin">Descubre nuestros programas y servicios dedicados a la inclusión y bienestar.</p>
         </div>
-    
-        </div>
+        
     
     </header>
 
@@ -86,7 +84,13 @@
                 <option value="24">Grande</option>
                 <option value="30">Muy Grande</option>
             </select>
+           
         </div>
+
+        <div class="ModoAccesible">
+            <button class="botonBonito" onclick="toggleGray()">Modo daltonico</button>
+        </div>
+        
         <main class="blog">
             <h3>Nuestros Logros</h3>
             <article class="entrada">
@@ -99,7 +103,7 @@
                 <div class="entrada__contenido">
                     <h4 class="no-margin">Inclusión en el Ámbito Laboral</h4>
                     <p>Hemos facilitado la inclusión de personas con discapacidades en el mercado laboral, conectando a empleadores comprometidos con talentos diversos.</p>
-                    <a href="https://www.youtube.com/@fundacionadecco" class="boton boton--primario">Conoce Más</a>
+                    <a href="" class="boton boton--primario">Conoce Más</a>
                 </div>
             </article>
 
@@ -112,7 +116,7 @@
                 <div class="entrada__contenido">
                     <h4 class="no-margin">Acceso a la Educación Universal</h4>
                     <p>Hemos trabajado para garantizar que cada persona, independientemente de sus capacidades, tenga acceso a una educación de calidad y recursos educativos adaptados.</p>
-                    <a href="https://www.youtube.com/@fundacionadecco" class="boton boton--primario">Conoce Más</a>
+                    <a href="" class="boton boton--primario">Conoce Más</a>
                 </div>
             </article>
 
@@ -126,7 +130,7 @@
                 <div class="entrada__contenido">
                     <h4 class="no-margin">Independencia Tecnológica</h4>
                     <p>Hemos proporcionado tecnologías asistidas y recursos para fomentar la independencia y la participación activa en la sociedad para personas con discapacidades.</p>
-                    <a href="https://www.youtube.com/@fundacionadecco" class="boton boton--primario">Conoce Más</a>
+                    <a href="" class="boton boton--primario">Conoce Más</a>
                 </div>
             </article>
 
@@ -140,7 +144,7 @@
                 <div class="entrada__contenido">
                     <h4 class="no-margin">Promoción del Deporte Adaptado</h4>
                     <p>Hemos respaldado y promovido la participación en deportes adaptados, contribuyendo a la mejora de la salud y el bienestar de las personas con discapacidades.</p>
-                    <a href="https://www.youtube.com/@fundacionadecco" class="boton boton--primario">Conoce Más</a>
+                    <a href="" class="boton boton--primario">Conoce Más</a>
                 </div>
             </article>
 
@@ -154,7 +158,7 @@
                 <div class="entrada__contenido">
                     <h4 class="no-margin">Accesibilidad en el Entorno Urbano</h4>
                     <p>Hemos abogado por entornos urbanos más accesibles, trabajando con comunidades y gobiernos locales para mejorar la infraestructura y servicios públicos para todos.</p>
-                    <a href="https://www.youtube.com/@fundacionadecco" class="boton boton--primario">Conoce Más</a>
+                    <a href="" class="boton boton--primario">Conoce Más</a>
                 </div>
             </article>
 
@@ -217,6 +221,13 @@
         // Función para cambiar el tamaño de la fuente
         function changeFontSize(size) {
             document.body.style.fontSize = size + 'px';
+        }
+
+        let isGray = false;
+
+        function toggleGray() {
+            isGray = !isGray;
+            document.body.style.filter = isGray ? "grayscale(100%)" : "grayscale(0%)";
         }
     </script>
 
